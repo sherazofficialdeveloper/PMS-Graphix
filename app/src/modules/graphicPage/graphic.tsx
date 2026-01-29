@@ -193,15 +193,7 @@ const GraphicDesignPage: React.FC = () => {
       </div>
 
       {/* Theme Toggle - Static (Navbar se control hoga) */}
-      <motion.button
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed top-6 right-6 z-50 p-3 rounded-2xl shadow-2xl backdrop-blur-sm border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-black/50 hover:bg-white/70 dark:hover:bg-black/70 transition-all"
-      >
-        <Moon className="text-gray-700 dark:text-gray-300" />
-      </motion.button>
+     
 
       <div className="relative z-10">
         {/* Hero Section */}

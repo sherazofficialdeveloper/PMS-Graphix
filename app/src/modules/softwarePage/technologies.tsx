@@ -101,12 +101,7 @@ export default function TechnologiesSection() {
       className="min-h-screen transition-all duration-300 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 text-gray-900 dark:text-white"
     >
       {/* System mode indicator - Hidden for production */}
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 dark:bg-white/10 backdrop-blur-sm border border-white/20">
-        <div className="w-3 h-3 rounded-full bg-blue-500 dark:bg-yellow-400" />
-        <span className="text-sm font-medium text-gray-900 dark:text-white">
-          System Mode
-        </span>
-      </div>
+     
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

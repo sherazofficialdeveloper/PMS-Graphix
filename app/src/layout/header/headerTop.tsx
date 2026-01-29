@@ -213,7 +213,7 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-start md:justify-between items-center">
             {/* Logo */}
             <motion.div
               initial={{ scale: 0 }}
@@ -224,7 +224,7 @@ const Navbar = () => {
               <motion.div 
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="w-14 h-14 rounded-full bg-gradient-to-r from-red-600 to-primary-red-800 flex items-center justify-center shadow-lg shadow-primary-red/90"
+                className="w-14 hidden h-14 rounded-full bg-gradient-to-r from-red-600 to-primary-red-800 flex items-center justify-center shadow-lg shadow-primary-red/90"
               >
                 <span className="text-white font-bold text-xl">PMS</span>
               </motion.div>
@@ -413,75 +413,69 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-
-              {/* Dark Mode Toggle - FIXED VERSION */}
-              <motion.button
-                variants={itemVariants}
-                custom={5}
-                initial="hidden"
-                animate="visible"
-                 onClick={() => setDark(!dark)}
-                whileHover={{ scale: 1.1, rotate: 15 }}
+{/* toggle button */}
+<motion.button
+                onClick={() => setDark(!dark)}
                 whileTap={{ scale: 0.9 }}
-                className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 group"
+                className="p-2 rounded-lg bg-gray-100 dark:bg-white/10"
                 aria-label="Toggle dark mode"
               >
                 <AnimatePresence mode="wait">
                   {dark ? (
                     <motion.div
-                      key="sun"
+                      key="sun-mobile"
                       initial={{ rotate: -180, scale: 0 }}
                       animate={{ rotate: 0, scale: 1 }}
                       exit={{ rotate: 180, scale: 0 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                      transition={{ type: "spring" }}
                     >
-                      <Sun size={20} className="text-yellow-400" />
+                      <Sun size={22} className="text-yellow-400" />
                     </motion.div>
                   ) : (
                     <motion.div
-                      key="moon"
+                      key="moon-mobile"
                       initial={{ rotate: 180, scale: 0 }}
                       animate={{ rotate: 0, scale: 1 }}
                       exit={{ rotate: -180, scale: 0 }}
-                      transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                      transition={{ type: "spring" }}
                     >
-                      <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+                      <Moon size={22} className="text-gray-700 dark:text-gray-300" />
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.button>
-
               {/* Get a Quote Button */}
               <Link href={"/contact"}>
-              <motion.button
-                variants={itemVariants}
-                custom={6}
-                initial="hidden"
-                animate="visible"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 30px rgba(239, 68, 68, 0.3)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-red-500 to-red-400 text-white font-medium shadow-lg transition-all duration-300 relative overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center">
-                  Get a Quote
-                  <motion.span
-                    initial={{ x: -5, opacity: 0 }}
-                    whileHover={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ArrowRight size={18} className="ml-2" />
-                  </motion.span>
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-red-light to-primary-red"
-                  initial={{ x: '100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button></Link>
+                <motion.button
+                  variants={itemVariants}
+                  custom={6}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 30px rgba(239, 68, 68, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="ml-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-medium shadow-lg transition-all duration-300 relative overflow-hidden group"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Get a Quote
+                    <motion.span
+                      initial={{ x: -5, opacity: 0 }}
+                      whileHover={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ArrowRight size={18} className="ml-2" />
+                    </motion.span>
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-600"
+                    initial={{ x: '100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -490,9 +484,9 @@ const Navbar = () => {
               <motion.button
                 onClick={() => setDark(!dark)}
                 whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-white/10"
+                className="p-2 ms-4 rounded-lg bg-gray-100 dark:bg-white/10"
                 aria-label="Toggle dark mode"
-              >  {dark ? "Light Mode" : "Dark Mode"}
+              >
                 <AnimatePresence mode="wait">
                   {dark ? (
                     <motion.div
@@ -574,43 +568,66 @@ const Navbar = () => {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
-                                className="mt-2 ml-6 space-y-2"
+                                className="mt-2 space-y-2"
                               >
-                                {services.map((service, index) => (
-                                 <Link  href={service.href} passHref key={service.name}>
-                                 <motion.a
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: index * 0.05 }}
-                                    className="flex items-start p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200"
+                                {/* Services Container with Fixed Height */}
+                                <div className="max-h-[60vh] overflow-y-auto pr-2">
+                                  {services.map((service, index) => (
+                                   <Link  href={service.href} passHref key={service.name}>
+                                   <motion.a
+                                      initial={{ opacity: 0, x: -20 }}
+                                      animate={{ opacity: 1, x: 0 }}
+                                      transition={{ delay: index * 0.05 }}
+                                      className="flex items-start p-3 mb-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200"
+                                      onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                      <span className="mr-3 mt-1 text-primary-red">
+                                        {service.icon}
+                                      </span>
+                                      <div className="flex-1">
+                                        <span className="font-medium text-gray-700 dark:text-gray-200 block">
+                                          {service.name}
+                                        </span>
+                                        <span className="text-xs text-gray-500 dark:text-gray-400 block mt-1">
+                                          {service.description}
+                                        </span>
+                                      </div>
+                                    </motion.a>
+                                    </Link>
+                                  ))}
+                                </div>
+                                
+                                {/* View All Services Button */}
+                                <motion.div
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  transition={{ delay: 0.3 }}
+                                  className="pt-2"
+                                >
+                                  <Link 
+                                    href="/service" 
+                                    className="flex items-center justify-center w-full py-3 rounded-xl bg-gradient-to-r from-primary-red/10 to-primary-red-light/10 hover:from-primary-red/20 hover:to-primary-red-light/20 dark:from-white/5 dark:to-gray-300/5 dark:hover:from-white/10 dark:hover:to-gray-300/10 transition-all duration-200"
+                                    onClick={() => setIsMobileMenuOpen(false)}
                                   >
-                                    <span className="mr-3 mt-1 text-primary-red">
-                                      {service.icon}
+                                    <span className="font-medium text-primary-red dark:text-primary-red-light mr-2">
+                                      View All Services
                                     </span>
-                                    <div>
-                                      <span className="font-medium text-gray-700 dark:text-gray-200 block">
-                                        {service.name}
-                                      </span>
-                                      <span className="text-xs text-gray-500 dark:text-gray-400 block mt-1">
-                                        {service.description}
-                                      </span>
-                                    </div>
-                                  </motion.a>
+                                    <ArrowRight size={18} className="text-primary-red dark:text-primary-red-light" />
                                   </Link>
-                                ))}
+                                </motion.div>
                               </motion.div>
                             )}
                           </AnimatePresence>
                         </div>
                       ) : (
-                        <a
+                        <Link
                           href={item.href}
                           className="flex items-center px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-200"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <span className="mr-3 text-primary-red">{item.icon}</span>
                           <span className="font-medium text-gray-800 dark:text-white">{item.name}</span>
-                        </a>
+                        </Link>
                       )}
                     </motion.div>
                   ))}
@@ -619,12 +636,16 @@ const Navbar = () => {
                     variants={mobileItemVariants}
                     className="pt-4"
                   >
-                    <motion.button
-                      whileTap={{ scale: 0.95 }}
-                      className="w-full py-3 rounded-xl bg-gradient-to-r from-primary-red to-primary-red-light text-white font-medium shadow-lg"
-                    >
-                      Get a Quote
-                    </motion.button>
+                    <Link href="/contact">
+                      <motion.button
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-red-500 text-white font-bold shadow-lg border border-red-600/30"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Get a Quote
+                        <ArrowRight className="inline ml-2 w-4 h-4" />
+                      </motion.button>
+                    </Link>
                   </motion.div>
                 </div>
               </motion.div>

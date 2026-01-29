@@ -42,7 +42,7 @@ const ServicesSection = () => {
       color: "from-red-500 to-orange-500",
       lightColor: "from-red-400 to-orange-400",
       bgGradient: "from-red-500/10 to-orange-500/10",
-        href: "/software"
+      href: "/software"
     },
     {
       id: 2,
@@ -58,7 +58,7 @@ const ServicesSection = () => {
       color: "from-orange-500 to-red-500",
       lightColor: "from-orange-400 to-red-400",
       bgGradient: "from-orange-500/10 to-red-500/10",
-        href: "/appDevelopment"
+      href: "/appDevelopment"
     },
     {
       id: 3,
@@ -74,7 +74,7 @@ const ServicesSection = () => {
       color: "from-red-600 to-orange-600",
       lightColor: "from-red-500 to-orange-500",
       bgGradient: "from-red-600/10 to-orange-600/10",
-        href: "/webDev"
+      href: "/webDev"
     },
     {
       id: 4,
@@ -90,7 +90,7 @@ const ServicesSection = () => {
       color: "from-orange-500 to-red-500",
       lightColor: "from-orange-400 to-red-400",
       bgGradient: "from-orange-500/10 to-red-500/10",
-        href: "/uiuxdesign"
+      href: "/uiuxdesign"
     },
     {
       id: 5,
@@ -106,7 +106,7 @@ const ServicesSection = () => {
       color: "from-red-500 to-orange-500",
       lightColor: "from-red-400 to-orange-400",
       bgGradient: "from-red-500/10 to-orange-500/10",
-        href: "/digital"
+      href: "/digital"
     },
     {
       id: 6,
@@ -267,12 +267,12 @@ const ServicesSection = () => {
             </span>
           </motion.div>
 
-          {/* Title */}
+          {/* Title - DARK MODE FIXED */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
             {"Premium Digital Solutions".split(' ').map((word, i) => (
               <motion.span
@@ -282,10 +282,8 @@ const ServicesSection = () => {
                 transition={{ delay: 0.4 + i * 0.1 }}
                 whileHover={{ 
                   scale: 1.05,
-                  color: "#ef4444",
-                  textShadow: "0 0 20px rgba(239, 68, 68, 0.5)"
                 }}
-                className="inline-block mr-3 cursor-pointer"
+                className="inline-block mr-3 cursor-pointer text-gray-900 dark:text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-red-500 hover:to-orange-500 transition-all duration-300"
               >
                 {word}
               </motion.span>
@@ -297,7 +295,7 @@ const ServicesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-xl max-w-3xl mx-auto"
           >
             <motion.span
               animate={{ 
@@ -458,7 +456,8 @@ const ServicesSection = () => {
                 </motion.div>
 
                 {/* Learn More Button */}
-             <Link href={service.href}>   <motion.button
+             <Link href={service.href}>   
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className={`w-full py-3 px-6 rounded-xl bg-gradient-to-r ${service.color} dark:${service.lightColor} text-white font-semibold shadow-lg group/btn overflow-hidden relative`}
@@ -478,7 +477,8 @@ const ServicesSection = () => {
                       <ArrowRight className="w-5 h-5" />
                     </motion.div>
                   </span>
-                </motion.button></Link>
+                </motion.button>
+              </Link>
               </div>
 
               {/* Corner Accents */}

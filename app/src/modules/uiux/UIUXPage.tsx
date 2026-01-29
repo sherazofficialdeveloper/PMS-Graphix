@@ -161,16 +161,7 @@ const UIUXPage: React.FC = () => {
       </div>
 
       {/* Theme Toggle */}
-      <motion.button
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed top-6 right-6 z-50 p-3 rounded-2xl shadow-2xl backdrop-blur-sm border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-black/50 hover:bg-white/70 dark:hover:bg-black/70 transition-all"
-      >
-        <Moon className="text-gray-700 dark:text-gray-300" />
-      </motion.button>
-
+     
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="container mx-auto px-4 md:px-6 lg:px-8 pt-32 pb-20">
