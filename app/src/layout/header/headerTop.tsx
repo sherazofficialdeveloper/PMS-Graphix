@@ -224,7 +224,7 @@ const Navbar = () => {
               <motion.div 
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center shadow-lg shadow-red-500/90 hidden sm:flex"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-red-600 to-red-800 hidden sm:flex items-center justify-center shadow-lg shadow-red-500/90"
               >
                 <span className="text-white font-bold text-lg sm:text-xl">PMS</span>
               </motion.div>
@@ -301,51 +301,51 @@ const Navbar = () => {
                           >
                             <div className="grid grid-cols-2 gap-4">
                               {services.map((service, index) => (
-                                <Link  href={service.href} passHref key={service.name}>
-                                <motion.a
-                                  custom={index}
-                                  variants={serviceItemVariants}
-                                  initial="hidden"
-                                  animate="visible"
-                                  whileHover={{ 
-                                    scale: 1.02,
-                                    backgroundColor: dark 
-                                      ? 'rgba(255, 255, 255, 0.05)' 
-                                      : 'rgba(239, 68, 68, 0.05)',
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
-                                  }}
-                                  className="p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-500/5 hover:to-red-400/5 dark:hover:from-white/5 dark:hover:to-gray-300/5 transition-all duration-300 group border border-transparent hover:border-red-500/20 dark:hover:border-red-400/20"
-                                >
-                                  <div className="flex items-start space-x-3">
-                                    <motion.div 
-                                      className={`p-2 rounded-lg bg-gradient-to-r from-red-500/10 to-red-400/10 group-hover:from-red-500/20 group-hover:to-red-400/20 transition-all duration-300 ${
-                                        dark ? 'dark:from-white/10 dark:to-gray-300/10' : ''
-                                      }`}
-                                      whileHover={{ rotate: 15 }}
-                                    >
-                                      <div className="text-red-500 dark:text-red-400">
-                                        {service.icon}
+                                <Link href={service.href} key={service.name}>
+                                  <motion.div
+                                    custom={index}
+                                    variants={serviceItemVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    whileHover={{ 
+                                      scale: 1.02,
+                                      backgroundColor: dark 
+                                        ? 'rgba(255, 255, 255, 0.05)' 
+                                        : 'rgba(239, 68, 68, 0.05)',
+                                      boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+                                    }}
+                                    className="p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-500/5 hover:to-red-400/5 dark:hover:from-white/5 dark:hover:to-gray-300/5 transition-all duration-300 group border border-transparent hover:border-red-500/20 dark:hover:border-red-400/20 cursor-pointer"
+                                  >
+                                    <div className="flex items-start space-x-3">
+                                      <motion.div 
+                                        className={`p-2 rounded-lg bg-gradient-to-r from-red-500/10 to-red-400/10 group-hover:from-red-500/20 group-hover:to-red-400/20 transition-all duration-300 ${
+                                          dark ? 'dark:from-white/10 dark:to-gray-300/10' : ''
+                                        }`}
+                                        whileHover={{ rotate: 15 }}
+                                      >
+                                        <div className="text-red-500 dark:text-red-400">
+                                          {service.icon}
+                                        </div>
+                                      </motion.div>
+                                      
+                                      <div className="flex-1">
+                                        <h3 className="font-semibold text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors mb-1">
+                                          {service.name}
+                                        </h3>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                          {service.description}
+                                        </p>
                                       </div>
-                                    </motion.div>
-                                    
-                                    <div className="flex-1">
-                                      <h3 className="font-semibold text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors mb-1">
-                                        {service.name}
-                                      </h3>
-                                      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                                        {service.description}
-                                      </p>
+                                      
+                                      <motion.div
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileHover={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                      >
+                                        <ArrowRight size={16} className="text-red-500 dark:text-red-400" />
+                                      </motion.div>
                                     </div>
-                                    
-                                    <motion.div
-                                      initial={{ opacity: 0, x: -10 }}
-                                      whileHover={{ opacity: 1, x: 0 }}
-                                      transition={{ duration: 0.2 }}
-                                    >
-                                      <ArrowRight size={16} className="text-red-500 dark:text-red-400" />
-                                    </motion.div>
-                                  </div>
-                                </motion.a>
+                                  </motion.div>
                                 </Link>
                               ))}
                             </div>
@@ -372,43 +372,42 @@ const Navbar = () => {
                       </AnimatePresence>
                     </motion.div>
                   ) : (
-                    <Link href={item.href} passHref key={item.name}>
-                    <motion.a
-                      custom={i}
-                      variants={itemVariants}
-                      initial="hidden"
-                      animate="visible"
-                     
-                      onMouseEnter={() => setHoveredItem(item.name)}
-                      onMouseLeave={() => setHoveredItem(null)}
-                      className="relative"
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 ${
-                          hoveredItem === item.name 
-                            ? `bg-gradient-to-r ${item.color} text-white`
-                            : 'bg-transparent hover:bg-gradient-to-r hover:from-red-500/10 hover:to-red-400/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
-                        }`}
+                    <Link href={item.href} key={item.name}>
+                      <motion.a
+                        custom={i}
+                        variants={itemVariants}
+                        initial="hidden"
+                        animate="visible"
+                        onMouseEnter={() => setHoveredItem(item.name)}
+                        onMouseLeave={() => setHoveredItem(null)}
+                        className="relative"
                       >
-                        <motion.span 
-                          className="mr-2"
-                          animate={{ 
-                            rotate: hoveredItem === item.name ? [0, 10, -10, 0] : 0 
-                          }}
-                          transition={{ duration: 0.5 }}
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 ${
+                            hoveredItem === item.name 
+                              ? `bg-gradient-to-r ${item.color} text-white`
+                              : 'bg-transparent hover:bg-gradient-to-r hover:from-red-500/10 hover:to-red-400/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
+                          }`}
                         >
-                          {item.icon}
-                        </motion.span>
-                        <span className={`font-medium ${
-                          hoveredItem === item.name 
-                            ? 'text-white' 
-                            : 'text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400'
-                        } transition-colors`}>
-                          {item.name}
-                        </span>
-                      </motion.div>
-                    </motion.a>
+                          <motion.span 
+                            className="mr-2"
+                            animate={{ 
+                              rotate: hoveredItem === item.name ? [0, 10, -10, 0] : 0 
+                            }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            {item.icon}
+                          </motion.span>
+                          <span className={`font-medium ${
+                            hoveredItem === item.name 
+                              ? 'text-white' 
+                              : 'text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400'
+                          } transition-colors`}>
+                            {item.name}
+                          </span>
+                        </motion.div>
+                      </motion.a>
                     </Link>
                   )}
                 </div>
@@ -483,7 +482,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button - RESPONSIVE FIX */}
-            <motion.div className="flex lg:hidden items-center space-x-2 sm:space-x-3">
+            <div className="flex lg:hidden items-center space-x-2 sm:space-x-3">
               {/* Mobile Dark Mode Toggle */}
               <motion.button
                 onClick={() => setDark(!dark)}
@@ -539,7 +538,7 @@ const Navbar = () => {
                   <Menu size={24} className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </motion.button>
-            </motion.div>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -588,26 +587,26 @@ const Navbar = () => {
                                 {/* Services Container with Fixed Height */}
                                 <div className="max-h-[60vh] overflow-y-auto pr-2">
                                   {services.map((service, index) => (
-                                   <Link  href={service.href} passHref key={service.name}>
-                                   <motion.a
-                                      initial={{ opacity: 0, x: -20 }}
-                                      animate={{ opacity: 1, x: 0 }}
-                                      transition={{ delay: index * 0.05 }}
-                                      className="flex items-start p-3 mb-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200"
-                                      onClick={() => setIsMobileMenuOpen(false)}
-                                    >
-                                      <span className="mr-3 mt-1 text-red-500">
-                                        {service.icon}
-                                      </span>
-                                      <div className="flex-1">
-                                        <span className="font-medium text-gray-700 dark:text-gray-200 block">
-                                          {service.name}
+                                    <Link href={service.href} key={service.name}>
+                                      <motion.div
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.05 }}
+                                        className="flex items-start p-3 mb-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                      >
+                                        <span className="mr-3 mt-1 text-red-500">
+                                          {service.icon}
                                         </span>
-                                        <span className="text-xs text-gray-500 dark:text-gray-400 block mt-1">
-                                          {service.description}
-                                        </span>
-                                      </div>
-                                    </motion.a>
+                                        <div className="flex-1">
+                                          <span className="font-medium text-gray-700 dark:text-gray-200 block">
+                                            {service.name}
+                                          </span>
+                                          <span className="text-xs text-gray-500 dark:text-gray-400 block mt-1">
+                                            {service.description}
+                                          </span>
+                                        </div>
+                                      </motion.div>
                                     </Link>
                                   ))}
                                 </div>
