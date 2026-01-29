@@ -123,8 +123,8 @@ const GetStartedSection = () => {
 
   // Trusted companies logos
   const trustedCompanies = [
-    { id: 1, name: "TechCorp", color: "text-blue-500" },
-    { id: 2, name: "InnovateX", color: "text-green-500" },
+    { id: 1, name: "TechCorp", color: "text-black" },
+    { id: 2, name: "InnovateX", color: "text-black" },
     { id: 3, name: "GlobalSoft", color: "text-purple-500" },
     { id: 4, name: "FutureTech", color: "text-yellow-500" },
     { id: 5, name: "AlphaSys", color: "text-cyan-500" }
@@ -649,7 +649,7 @@ const GetStartedSection = () => {
                   rotateY: 180,
                   transition: { duration: 0.5 }
                 }}
-                className="p-6 rounded-xl bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="p-6 rounded-xl text-black bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-center shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                 style={{ transformStyle: 'preserve-3d' }}
               >
                 <motion.div

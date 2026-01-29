@@ -160,11 +160,7 @@ const SEOServicesPage: React.FC = () => {
 
   return (
     <div 
-      className={`min-h-screen transition-colors duration-500 overflow-x-hidden ${
-        darkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 dark:text-gray-100' 
-          : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900 bg-white dark:bg-gray-50'
-      }`}
+      className="min-h-screen transition-colors duration-500 overflow-x-hidden bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
       onMouseMove={handleMouseMove}
     >
       {/* Animated Background Elements */}
@@ -179,9 +175,7 @@ const SEOServicesPage: React.FC = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className={`absolute w-[600px] h-[600px] rounded-full blur-3xl ${
-            darkMode ? 'bg-red-500/10 dark:bg-red-500/10' : 'bg-red-500/5'
-          }`}
+          className="absolute w-[600px] h-[600px] rounded-full blur-3xl bg-red-500/5 dark:bg-red-500/10"
           style={{ top: '20%', left: '5%' }}
         />
         <motion.div
@@ -194,9 +188,7 @@ const SEOServicesPage: React.FC = () => {
             repeat: Infinity,
             ease: "linear"
           }}
-          className={`absolute w-[500px] h-[500px] rounded-full blur-3xl ${
-            darkMode ? 'bg-red-500/10 dark:bg-red-500/10' : 'bg-red-500/5'
-          }`}
+          className="absolute w-[500px] h-[500px] rounded-full blur-3xl bg-red-500/5 dark:bg-red-500/10"
           style={{ bottom: '15%', right: '10%' }}
         />
       </div>
@@ -208,13 +200,9 @@ const SEOServicesPage: React.FC = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleDarkMode}
-        className={`fixed top-6 right-6 z-50 p-3 rounded-2xl shadow-2xl backdrop-blur-sm border transition-all ${
-          darkMode 
-            ? 'bg-black/50 border-gray-800 hover:bg-black/70 dark:bg-black/50 dark:border-gray-800 dark:hover:bg-black/70' 
-            : 'bg-white/50 border-gray-200 hover:bg-white/70'
-        }`}
+        className="fixed top-6 right-6 z-50 p-3 rounded-2xl shadow-2xl backdrop-blur-sm border transition-all bg-white/50 dark:bg-black/50 border-gray-200 dark:border-gray-800 hover:bg-white/70 dark:hover:bg-black/70"
       >
-        {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-gray-700" />}
+        {darkMode ? <Sun className="text-yellow-400 dark:text-yellow-400" /> : <Moon className="text-gray-700 dark:text-gray-700" />}
       </motion.button>
 
       <div className="relative z-10">
@@ -229,11 +217,7 @@ const SEOServicesPage: React.FC = () => {
             {/* Badge */}
             <motion.div
               variants={itemVariants}
-              className={`inline-flex items-center px-4 py-2 rounded-full mb-8 transition-colors ${
-                darkMode 
-                  ? 'bg-red-500/10 border border-red-500/20 text-red-400 dark:bg-red-500/10 dark:border-red-500/20 dark:text-red-400' 
-                  : 'bg-red-500/10 border border-red-500/20 text-red-600'
-              }`}
+              className="inline-flex items-center px-4 py-2 rounded-full mb-8 bg-red-500/10 dark:bg-red-500/10 border border-red-500/20 dark:border-red-500/20 text-red-600 dark:text-red-400"
             >
               <TrendingUp size={16} className="mr-2" />
               <span className="font-bold text-sm tracking-wider">TOP RANKING EXPERTS</span>
@@ -242,18 +226,12 @@ const SEOServicesPage: React.FC = () => {
             {/* Main Heading */}
             <motion.h1
               variants={itemVariants}
-              className={`text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight transition-colors ${
-                darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-              }`}
+              className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight text-gray-900 dark:text-white"
             >
               Dominate
               <br />
               <span className="relative">
-                <span className={`bg-clip-text text-transparent bg-gradient-to-r transition-all ${
-                  darkMode 
-                    ? 'from-red-400 via-red-500 to-red-600 dark:from-red-400 dark:via-red-500 dark:to-red-600' 
-                    : 'from-red-500 via-red-600 to-red-700'
-                }`}>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-red-500 to-orange-500">
                   Search Results
                 </span>
                 <motion.span
@@ -261,7 +239,7 @@ const SEOServicesPage: React.FC = () => {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute -top-4 -right-4"
                 >
-                  <Sparkles className={darkMode ? 'text-red-400 dark:text-red-400' : 'text-red-500'} />
+                  <Sparkles className="text-red-500 dark:text-red-400" />
                 </motion.span>
               </span>
             </motion.h1>
@@ -269,9 +247,7 @@ const SEOServicesPage: React.FC = () => {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className={`text-xl md:text-2xl mb-12 max-w-3xl mx-auto transition-colors ${
-                darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-              }`}
+              className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-600 dark:text-gray-300"
             >
               We deliver measurable SEO results that drive qualified traffic, increase conversions, 
               and boost your revenue through proven search engine optimization strategies.
@@ -282,7 +258,7 @@ const SEOServicesPage: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center bg-gradient-to-r from-red-500 to-red-600 text-white shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all dark:from-red-500 dark:to-red-600 dark:shadow-red-500/30 dark:hover:shadow-red-500/50"
+                className="group px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center bg-gradient-to-r from-red-600 to-orange-500 text-white shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all"
               >
                 Get Free SEO Audit
                 <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
@@ -291,11 +267,7 @@ const SEOServicesPage: React.FC = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-8 py-4 rounded-2xl font-bold text-lg border-2 backdrop-blur-sm transition-all ${
-                  darkMode 
-                    ? 'bg-gray-900/50 border-gray-700 text-gray-100 hover:bg-gray-800/50 dark:bg-gray-900/50 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800/50' 
-                    : 'bg-white/50 border-gray-200 text-gray-800 hover:bg-white/70'
-                }`}
+                className="px-8 py-4 rounded-2xl font-bold text-lg border-2 backdrop-blur-sm transition-all bg-white/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 hover:bg-white/70 dark:hover:bg-gray-800/50"
               >
                 View Case Studies
               </motion.button>
@@ -311,27 +283,15 @@ const SEOServicesPage: React.FC = () => {
                   key={metric.label}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
-                  className={`text-center p-6 rounded-3xl backdrop-blur-sm border transition-all ${
-                    darkMode 
-                      ? 'bg-gray-900/30 border-gray-800 dark:bg-gray-900/30 dark:border-gray-800' 
-                      : 'bg-white/30 border-gray-200'
-                  }`}
+                  className="text-center p-6 rounded-3xl backdrop-blur-sm border transition-all bg-white/30 dark:bg-gray-900/30 border-gray-200 dark:border-gray-800"
                 >
-                  <div className={`inline-block p-3 rounded-xl mb-4 transition-all ${
-                    darkMode 
-                      ? 'bg-red-500/20 text-red-400 dark:bg-red-500/20 dark:text-red-400' 
-                      : 'bg-red-500/10 text-red-600'
-                  }`}>
+                  <div className="inline-block p-3 rounded-xl mb-4 bg-red-500/10 dark:bg-red-500/20 text-red-600 dark:text-red-400">
                     {metric.icon}
                   </div>
-                  <div className={`text-3xl font-black mb-2 transition-colors ${
-                    darkMode ? 'text-red-400 dark:text-red-400' : 'text-red-600'
-                  }`}>
+                  <div className="text-3xl font-black mb-2 text-red-600 dark:text-red-400">
                     {metric.value}
                   </div>
-                  <div className={`text-sm font-medium transition-colors ${
-                    darkMode ? 'text-gray-400 dark:text-gray-400' : 'text-gray-600'
-                  }`}>
+                  <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
                     {metric.label}
                   </div>
                 </motion.div>
@@ -349,14 +309,10 @@ const SEOServicesPage: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               className="text-center mb-12"
             >
-              <h2 className={`text-4xl md:text-5xl font-black mb-6 transition-colors ${
-                darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-              }`}>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900 dark:text-white">
                 Comprehensive <span className="text-red-500 dark:text-red-500">SEO</span> Services
               </h2>
-              <p className={`text-xl max-w-2xl mx-auto transition-colors ${
-                darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-              }`}>
+              <p className="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
                 End-to-end SEO solutions tailored to your business objectives
               </p>
             </motion.div>
@@ -372,11 +328,7 @@ const SEOServicesPage: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   onHoverStart={() => setHoveredCard(index)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className={`relative overflow-hidden rounded-3xl p-8 backdrop-blur-sm border transition-all duration-300 ${
-                    darkMode 
-                      ? 'bg-gray-900/30 border-gray-800 hover:border-red-500/50 dark:bg-gray-900/30 dark:border-gray-800 dark:hover:border-red-500/50' 
-                      : 'bg-white/30 border-gray-200 hover:border-red-500/50'
-                  }`}
+                  className="relative overflow-hidden rounded-3xl p-8 backdrop-blur-sm border transition-all duration-300 bg-white/30 dark:bg-gray-900/30 border-gray-200 dark:border-gray-800 hover:border-red-500/50"
                 >
                   {/* Hover Effect */}
                   <AnimatePresence>
@@ -385,53 +337,39 @@ const SEOServicesPage: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
-                        className={`absolute inset-0 bg-gradient-to-br transition-all ${
-                          darkMode 
-                            ? 'from-red-500/10 to-red-600/5 dark:from-red-500/10 dark:to-red-600/5' 
-                            : 'from-red-500/5 to-red-600/2'
-                        }`}
+                        className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/2 dark:from-red-500/10 dark:to-red-600/5"
                       />
                     )}
                   </AnimatePresence>
 
                   {/* Icon */}
-                  <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all ${
-                    darkMode 
-                      ? 'bg-red-500/20 dark:bg-red-500/20' 
-                      : 'bg-red-500/10'
-                  }`}>
-                    <div className={darkMode ? 'text-red-400 dark:text-red-400' : 'text-red-600'}>
+                  <div className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-red-500/10 dark:bg-red-500/20">
+                    <div className="text-red-600 dark:text-red-400">
                       {service.icon}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <h3 className={`text-2xl font-bold mb-3 transition-colors ${
-                      darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-                    }`}>
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                       {service.title}
                     </h3>
-                    <p className={`mb-6 transition-colors ${
-                      darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-                    }`}>
+                    <p className="mb-6 text-gray-600 dark:text-gray-300">
                       {service.description}
                     </p>
                     
                     <ul className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center">
-                          <CheckCircle2 className={`mr-3 transition-colors ${darkMode ? 'text-red-400 dark:text-red-400' : 'text-red-500'}`} size={18} />
-                          <span className={`transition-colors ${darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'}`}>
+                          <CheckCircle2 className="mr-3 text-red-500 dark:text-red-400" size={18} />
+                          <span className="text-gray-600 dark:text-gray-300">
                             {feature}
                           </span>
                         </li>
                       ))}
                     </ul>
                     
-                    <button className={`flex items-center font-semibold transition-colors group ${
-                      darkMode ? 'text-red-400 dark:text-red-400' : 'text-red-600'
-                    }`}>
+                    <button className="flex items-center font-semibold text-red-600 dark:text-red-400 group">
                       Learn More
                       <ChevronRight className="ml-2 group-hover:translate-x-2 transition-transform" />
                     </button>
@@ -451,14 +389,10 @@ const SEOServicesPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-4xl md:text-5xl font-black mb-6 transition-colors ${
-                darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-              }`}>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900 dark:text-white">
                 Our <span className="text-red-500 dark:text-red-500">4-Step</span> Process
               </h2>
-              <p className={`text-xl max-w-2xl mx-auto transition-colors ${
-                darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-              }`}>
+              <p className="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
                 A proven methodology that delivers consistent results
               </p>
             </motion.div>
@@ -472,30 +406,22 @@ const SEOServicesPage: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className={`relative rounded-3xl p-8 backdrop-blur-sm border transition-all duration-300 ${
-                    darkMode 
-                      ? 'bg-gray-900/30 border-gray-800 hover:border-red-500/50 dark:bg-gray-900/30 dark:border-gray-800 dark:hover:border-red-500/50' 
-                      : 'bg-white/30 border-gray-200 hover:border-red-500/50'
-                  }`}
+                  className="relative rounded-3xl p-8 backdrop-blur-sm border transition-all duration-300 bg-white/30 dark:bg-gray-900/30 border-gray-200 dark:border-gray-800 hover:border-red-500/50"
                 >
-                  <div className={`text-6xl font-black mb-4 transition-colors ${
-                    darkMode ? 'text-red-500/20 dark:text-red-400/20' : 'text-red-500/10'
-                  }`}>
+                  <div className="text-6xl font-black mb-4 text-red-500/10 dark:text-red-400/20">
                     {step.step}
                   </div>
-                  <h3 className={`text-2xl font-bold mb-3 transition-colors ${
-                    darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-                  }`}>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                     {step.title}
                   </h3>
-                  <p className={`transition-colors ${darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'}`}>
+                  <p className="text-gray-600 dark:text-gray-300">
                     {step.description}
                   </p>
                   
                   {/* Connector lines for desktop */}
                   {index < 3 && (
                     <div className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2">
-                      <div className={`w-6 h-0.5 transition-colors ${darkMode ? 'bg-red-500/30 dark:bg-red-500/30' : 'bg-red-500/20'}`} />
+                      <div className="w-6 h-0.5 bg-red-500/20 dark:bg-red-500/30" />
                     </div>
                   )}
                 </motion.div>
@@ -513,14 +439,10 @@ const SEOServicesPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className={`text-4xl md:text-5xl font-black mb-6 transition-colors ${
-                darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-              }`}>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900 dark:text-white">
                 Why Our <span className="text-red-500 dark:text-red-500">SEO</span> Works
               </h2>
-              <p className={`text-xl max-w-2xl mx-auto transition-colors ${
-                darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-              }`}>
+              <p className="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
                 Cutting-edge techniques combined with proven strategies
               </p>
             </motion.div>
@@ -534,25 +456,15 @@ const SEOServicesPage: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className={`text-center p-8 rounded-3xl backdrop-blur-sm border transition-all duration-300 ${
-                    darkMode 
-                      ? 'bg-gray-900/30 border-gray-800 hover:border-red-500/50 dark:bg-gray-900/30 dark:border-gray-800 dark:hover:border-red-500/50' 
-                      : 'bg-white/30 border-gray-200 hover:border-red-500/50'
-                  }`}
+                  className="text-center p-8 rounded-3xl backdrop-blur-sm border transition-all duration-300 bg-white/30 dark:bg-gray-900/30 border-gray-200 dark:border-gray-800 hover:border-red-500/50"
                 >
-                  <div className={`inline-block p-4 rounded-2xl mb-6 transition-all ${
-                    darkMode 
-                      ? 'bg-red-500/20 text-red-400 dark:bg-red-500/20 dark:text-red-400' 
-                      : 'bg-red-500/10 text-red-600'
-                  }`}>
+                  <div className="inline-block p-4 rounded-2xl mb-6 bg-red-500/10 dark:bg-red-500/20 text-red-600 dark:text-red-400">
                     {feature.icon}
                   </div>
-                  <h3 className={`text-2xl font-bold mb-3 transition-colors ${
-                    darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-                  }`}>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className={`transition-colors ${darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'}`}>
+                  <p className="text-gray-600 dark:text-gray-300">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -568,19 +480,11 @@ const SEOServicesPage: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className={`relative overflow-hidden rounded-[4rem] p-8 md:p-12 border transition-all ${
-                darkMode 
-                  ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900 border-gray-800 dark:from-gray-900 dark:via-black dark:to-gray-900 dark:border-gray-800' 
-                  : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 border-gray-200'
-              }`}
+              className="relative overflow-hidden rounded-[4rem] p-8 md:p-12 border bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-black dark:to-gray-900 border-gray-200 dark:border-gray-800"
             >
               {/* Decorative Elements */}
-              <div className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl transition-all ${
-                darkMode ? 'bg-red-500/10 dark:bg-red-500/10' : 'bg-red-500/5'
-              }`} />
-              <div className={`absolute -bottom-20 -left-20 w-40 h-40 rounded-full blur-3xl transition-all ${
-                darkMode ? 'bg-red-500/10 dark:bg-red-500/10' : 'bg-red-500/5'
-              }`} />
+              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl bg-red-500/5 dark:bg-red-500/10" />
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full blur-3xl bg-red-500/5 dark:bg-red-500/10" />
 
               <div className="relative z-10 text-center max-w-4xl mx-auto">
                 <motion.div
@@ -589,25 +493,17 @@ const SEOServicesPage: React.FC = () => {
                   viewport={{ once: true }}
                   className="space-y-8"
                 >
-                  <div className={`inline-block p-4 rounded-2xl transition-all ${
-                    darkMode 
-                      ? 'bg-red-500/20 text-red-400 dark:bg-red-500/20 dark:text-red-400' 
-                      : 'bg-red-500/10 text-red-600'
-                  }`}>
+                  <div className="inline-block p-4 rounded-2xl bg-red-500/10 dark:bg-red-500/20 text-red-600 dark:text-red-400">
                     <Rocket size={48} />
                   </div>
 
-                  <h2 className={`text-4xl md:text-5xl lg:text-6xl font-black transition-colors ${
-                    darkMode ? 'text-white dark:text-white' : 'text-gray-900'
-                  }`}>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white">
                     Ready to
                     <br />
                     <span className="text-red-500 dark:text-red-500">Dominate</span> Google?
                   </h2>
 
-                  <p className={`text-xl md:text-2xl transition-colors ${
-                    darkMode ? 'text-gray-300 dark:text-gray-300' : 'text-gray-600'
-                  }`}>
+                  <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300">
                     Get your free SEO audit and discover how we can 10x your organic traffic.
                   </p>
 
@@ -615,7 +511,7 @@ const SEOServicesPage: React.FC = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all dark:from-red-500 dark:to-red-600 dark:shadow-red-500/30 dark:hover:shadow-red-500/50"
+                      className="px-8 py-4 bg-gradient-to-r from-red-600 to-orange-500 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-red-500/30 hover:shadow-red-500/50 transition-all"
                     >
                       Get Free SEO Audit
                     </motion.button>
@@ -623,11 +519,7 @@ const SEOServicesPage: React.FC = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`px-8 py-4 rounded-2xl font-bold text-lg border-2 backdrop-blur-sm transition-all ${
-                        darkMode 
-                          ? 'bg-gray-900/50 border-gray-700 text-gray-100 hover:bg-gray-800/50 dark:bg-gray-900/50 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800/50' 
-                          : 'bg-white/50 border-gray-200 text-gray-800 hover:bg-white/70'
-                      }`}
+                      className="px-8 py-4 rounded-2xl font-bold text-lg border-2 backdrop-blur-sm transition-all bg-white/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 hover:bg-white/70 dark:hover:bg-gray-800/50"
                     >
                       Book Strategy Call
                     </motion.button>
@@ -652,9 +544,7 @@ const SEOServicesPage: React.FC = () => {
           damping: 28
         }}
       >
-        <div className={`w-full h-full rounded-full transition-colors ${
-          darkMode ? 'bg-red-400 dark:bg-red-400' : 'bg-red-500'
-        }`} />
+        <div className="w-full h-full rounded-full bg-red-500 dark:bg-red-400" />
       </motion.div>
     </div>
   );
