@@ -212,8 +212,8 @@ const Navbar = () => {
             : 'py-5 bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex justify-start md:justify-between items-center">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
             {/* Logo */}
             <motion.div
               initial={{ scale: 0 }}
@@ -224,9 +224,9 @@ const Navbar = () => {
               <motion.div 
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="w-14 hidden h-14 rounded-full bg-gradient-to-r from-red-600 to-primary-red-800 flex items-center justify-center shadow-lg shadow-primary-red/90"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-red-600 to-red-800 flex items-center justify-center shadow-lg shadow-red-500/90 hidden sm:flex"
               >
-                <span className="text-white font-bold text-xl">PMS</span>
+                <span className="text-white font-bold text-lg sm:text-xl">PMS</span>
               </motion.div>
               <motion.span        
                 whileHover={{ scale: 1.05 }}
@@ -236,7 +236,7 @@ const Navbar = () => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item, i) => (
                 <div key={item.name} className="relative">
                   {item.name === 'Services' ? (
@@ -260,7 +260,7 @@ const Navbar = () => {
                         className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 group ${
                           hoveredItem === item.name 
                             ? `bg-gradient-to-r ${item.color} text-white`
-                            : 'bg-transparent hover:bg-gradient-to-r hover:from-primary-red/10 hover:to-primary-red-light/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
+                            : 'bg-transparent hover:bg-gradient-to-r hover:from-red-500/10 hover:to-red-400/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
                         }`}
                       >
                         <motion.span 
@@ -275,7 +275,7 @@ const Navbar = () => {
                         <span className={`font-medium ${
                           hoveredItem === item.name 
                             ? 'text-white' 
-                            : 'text-gray-800 dark:text-white group-hover:text-primary-red dark:group-hover:text-primary-red-light'
+                            : 'text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400'
                         } transition-colors`}>
                           {item.name}
                         </span>
@@ -314,22 +314,22 @@ const Navbar = () => {
                                       : 'rgba(239, 68, 68, 0.05)',
                                     boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
                                   }}
-                                  className="p-4 rounded-xl hover:bg-gradient-to-r hover:from-primary-red/5 hover:to-primary-red-light/5 dark:hover:from-white/5 dark:hover:to-gray-300/5 transition-all duration-300 group border border-transparent hover:border-primary-red/20 dark:hover:border-primary-red-light/20"
+                                  className="p-4 rounded-xl hover:bg-gradient-to-r hover:from-red-500/5 hover:to-red-400/5 dark:hover:from-white/5 dark:hover:to-gray-300/5 transition-all duration-300 group border border-transparent hover:border-red-500/20 dark:hover:border-red-400/20"
                                 >
                                   <div className="flex items-start space-x-3">
                                     <motion.div 
-                                      className={`p-2 rounded-lg bg-gradient-to-r from-primary-red/10 to-primary-red-light/10 group-hover:from-primary-red/20 group-hover:to-primary-red-light/20 transition-all duration-300 ${
+                                      className={`p-2 rounded-lg bg-gradient-to-r from-red-500/10 to-red-400/10 group-hover:from-red-500/20 group-hover:to-red-400/20 transition-all duration-300 ${
                                         dark ? 'dark:from-white/10 dark:to-gray-300/10' : ''
                                       }`}
                                       whileHover={{ rotate: 15 }}
                                     >
-                                      <div className="text-primary-red dark:text-primary-red-light">
+                                      <div className="text-red-500 dark:text-red-400">
                                         {service.icon}
                                       </div>
                                     </motion.div>
                                     
                                     <div className="flex-1">
-                                      <h3 className="font-semibold text-gray-800 dark:text-white group-hover:text-primary-red dark:group-hover:text-primary-red-light transition-colors mb-1">
+                                      <h3 className="font-semibold text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors mb-1">
                                         {service.name}
                                       </h3>
                                       <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -342,7 +342,7 @@ const Navbar = () => {
                                       whileHover={{ opacity: 1, x: 0 }}
                                       transition={{ duration: 0.2 }}
                                     >
-                                      <ArrowRight size={16} className="text-primary-red dark:text-primary-red-light" />
+                                      <ArrowRight size={16} className="text-red-500 dark:text-red-400" />
                                     </motion.div>
                                   </div>
                                 </motion.a>
@@ -359,12 +359,12 @@ const Navbar = () => {
                             >
                               <Link 
                                 href="/service" 
-                                className="flex items-center justify-center w-full py-3 rounded-xl bg-gradient-to-r from-primary-red/10 to-primary-red-light/10 hover:from-primary-red/20 hover:to-primary-red-light/20 dark:from-white/5 dark:to-gray-300/5 dark:hover:from-white/10 dark:hover:to-gray-300/10 transition-all duration-300 group"
+                                className="flex items-center justify-center w-full py-3 rounded-xl bg-gradient-to-r from-red-500/10 to-red-400/10 hover:from-red-500/20 hover:to-red-400/20 dark:from-white/5 dark:to-gray-300/5 dark:hover:from-white/10 dark:hover:to-gray-300/10 transition-all duration-300 group"
                               >
-                                <span className="font-medium text-primary-red dark:text-primary-red-light mr-2">
+                                <span className="font-medium text-red-500 dark:text-red-400 mr-2">
                                   View All Services
                                 </span>
-                                <ArrowRight size={18} className="text-primary-red dark:text-primary-red-light group-hover:translate-x-2 transition-transform" />
+                                <ArrowRight size={18} className="text-red-500 dark:text-red-400 group-hover:translate-x-2 transition-transform" />
                               </Link>
                             </motion.div>
                           </motion.div>
@@ -388,7 +388,7 @@ const Navbar = () => {
                         className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 ${
                           hoveredItem === item.name 
                             ? `bg-gradient-to-r ${item.color} text-white`
-                            : 'bg-transparent hover:bg-gradient-to-r hover:from-primary-red/10 hover:to-primary-red-light/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
+                            : 'bg-transparent hover:bg-gradient-to-r hover:from-red-500/10 hover:to-red-400/10 dark:hover:from-white/10 dark:hover:to-gray-300/10'
                         }`}
                       >
                         <motion.span 
@@ -403,7 +403,7 @@ const Navbar = () => {
                         <span className={`font-medium ${
                           hoveredItem === item.name 
                             ? 'text-white' 
-                            : 'text-gray-800 dark:text-white group-hover:text-primary-red dark:group-hover:text-primary-red-light'
+                            : 'text-gray-800 dark:text-white group-hover:text-red-500 dark:group-hover:text-red-400'
                         } transition-colors`}>
                           {item.name}
                         </span>
@@ -413,8 +413,79 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-{/* toggle button */}
-<motion.button
+
+              {/* Dark Mode Toggle - Only show on large screens */}
+              <motion.button
+                onClick={() => setDark(!dark)}
+                whileTap={{ scale: 0.9 }}
+                className="hidden lg:block p-2 rounded-lg bg-gray-100 dark:bg-white/10 ml-2"
+                aria-label="Toggle dark mode"
+              >
+                <AnimatePresence mode="wait">
+                  {dark ? (
+                    <motion.div
+                      key="sun-desktop"
+                      initial={{ rotate: -180, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      exit={{ rotate: 180, scale: 0 }}
+                      transition={{ type: "spring" }}
+                    >
+                      <Sun size={22} className="text-yellow-400" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="moon-desktop"
+                      initial={{ rotate: 180, scale: 0 }}
+                      animate={{ rotate: 0, scale: 1 }}
+                      exit={{ rotate: -180, scale: 0 }}
+                      transition={{ type: "spring" }}
+                    >
+                      <Moon size={22} className="text-gray-700 dark:text-gray-300" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
+
+              {/* Get a Quote Button - RESPONSIVE FIX */}
+              <Link href={"/contact"}>
+                <motion.button
+                  variants={itemVariants}
+                  custom={6}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 30px rgba(239, 68, 68, 0.3)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="ml-2 lg:ml-4 px-4 py-2 lg:px-6 lg:py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-medium text-sm lg:text-base shadow-lg transition-all duration-300 relative overflow-hidden group"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <span className="hidden sm:inline">Get a Quote</span>
+                    <span className="sm:hidden">Quote</span>
+                    <motion.span
+                      initial={{ x: -5, opacity: 0 }}
+                      whileHover={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                      className="ml-1 lg:ml-2 hidden sm:block"
+                    >
+                      <ArrowRight size={16} className="w-4 h-4 lg:w-5 lg:h-5" />
+                    </motion.span>
+                  </span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-600"
+                    initial={{ x: '100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.button>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button - RESPONSIVE FIX */}
+            <motion.div className="flex lg:hidden items-center space-x-2 sm:space-x-3">
+              {/* Mobile Dark Mode Toggle */}
+              <motion.button
                 onClick={() => setDark(!dark)}
                 whileTap={{ scale: 0.9 }}
                 className="p-2 rounded-lg bg-gray-100 dark:bg-white/10"
@@ -429,7 +500,7 @@ const Navbar = () => {
                       exit={{ rotate: 180, scale: 0 }}
                       transition={{ type: "spring" }}
                     >
-                      <Sun size={22} className="text-yellow-400" />
+                      <Sun size={20} className="text-yellow-400 w-5 h-5 sm:w-6 sm:h-6" />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -439,89 +510,33 @@ const Navbar = () => {
                       exit={{ rotate: -180, scale: 0 }}
                       transition={{ type: "spring" }}
                     >
-                      <Moon size={22} className="text-gray-700 dark:text-gray-300" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.button>
-              {/* Get a Quote Button */}
-              <Link href={"/contact"}>
-                <motion.button
-                  variants={itemVariants}
-                  custom={6}
-                  initial="hidden"
-                  animate="visible"
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(239, 68, 68, 0.3)"
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="ml-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-medium shadow-lg transition-all duration-300 relative overflow-hidden group"
-                >
-                  <span className="relative z-10 flex items-center">
-                    Get a Quote
-                    <motion.span
-                      initial={{ x: -5, opacity: 0 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ArrowRight size={18} className="ml-2" />
-                    </motion.span>
-                  </span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-600"
-                    initial={{ x: '100%' }}
-                    whileHover={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.button>
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <motion.div className="md:hidden flex items-center space-x-2">
-              {/* Mobile Dark Mode Toggle - FIXED */}
-              <motion.button
-                onClick={() => setDark(!dark)}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 ms-4 rounded-lg bg-gray-100 dark:bg-white/10"
-                aria-label="Toggle dark mode"
-              >
-                <AnimatePresence mode="wait">
-                  {dark ? (
-                    <motion.div
-                      key="sun-mobile"
-                      initial={{ rotate: -180, scale: 0 }}
-                      animate={{ rotate: 0, scale: 1 }}
-                      exit={{ rotate: 180, scale: 0 }}
-                      transition={{ type: "spring" }}
-                    >
-                      <Sun size={22} className="text-yellow-400" />
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="moon-mobile"
-                      initial={{ rotate: 180, scale: 0 }}
-                      animate={{ rotate: 0, scale: 1 }}
-                      exit={{ rotate: -180, scale: 0 }}
-                      transition={{ type: "spring" }}
-                    >
-                      <Moon size={22} className="text-gray-700 dark:text-gray-300" />
+                      <Moon size={20} className="text-gray-700 dark:text-gray-300 w-5 h-5 sm:w-6 sm:h-6" />
                     </motion.div>
                   )}
                 </AnimatePresence>
               </motion.button>
               
+              {/* Get a Quote Button for Tablets (768px to 1024px) */}
+              <Link href={"/contact"} className="hidden md:block lg:hidden">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-4 py-2 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white font-medium text-sm shadow-lg"
+                >
+                  Get Quote
+                </motion.button>
+              </Link>
+              
               <motion.button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-lg bg-primary-red/10 text-primary-red"
+                className="p-2 rounded-lg bg-red-500/10 text-red-500"
               >
                 {isMobileMenuOpen ? (
-                  <X size={24} />
+                  <X size={24} className="w-5 h-5 sm:w-6 sm:h-6" />
                 ) : (
-                  <Menu size={24} />
+                  <Menu size={24} className="w-5 h-5 sm:w-6 sm:h-6" />
                 )}
               </motion.button>
             </motion.div>
@@ -535,7 +550,7 @@ const Navbar = () => {
                 initial="closed"
                 animate="open"
                 exit="closed"
-                className="md:hidden overflow-hidden mt-4 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl border border-gray-100 dark:border-gray-700"
+                className="lg:hidden overflow-hidden mt-4 rounded-2xl bg-white dark:bg-gray-800 shadow-2xl border border-gray-100 dark:border-gray-700"
               >
                 <div className="p-4 space-y-2">
                   {navItems.map((item, index) => (
@@ -551,7 +566,7 @@ const Navbar = () => {
                             className="flex items-center justify-between w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-200"
                           >
                             <div className="flex items-center">
-                              <span className="mr-3 text-primary-red">{item.icon}</span>
+                              <span className="mr-3 text-red-500">{item.icon}</span>
                               <span className="font-medium text-gray-800 dark:text-white">{item.name}</span>
                             </div>
                             <motion.span
@@ -581,7 +596,7 @@ const Navbar = () => {
                                       className="flex items-start p-3 mb-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-200"
                                       onClick={() => setIsMobileMenuOpen(false)}
                                     >
-                                      <span className="mr-3 mt-1 text-primary-red">
+                                      <span className="mr-3 mt-1 text-red-500">
                                         {service.icon}
                                       </span>
                                       <div className="flex-1">
@@ -606,13 +621,13 @@ const Navbar = () => {
                                 >
                                   <Link 
                                     href="/service" 
-                                    className="flex items-center justify-center w-full py-3 rounded-xl bg-gradient-to-r from-primary-red/10 to-primary-red-light/10 hover:from-primary-red/20 hover:to-primary-red-light/20 dark:from-white/5 dark:to-gray-300/5 dark:hover:from-white/10 dark:hover:to-gray-300/10 transition-all duration-200"
+                                    className="flex items-center justify-center w-full py-3 rounded-xl bg-gradient-to-r from-red-500/10 to-red-400/10 hover:from-red-500/20 hover:to-red-400/20 dark:from-white/5 dark:to-gray-300/5 dark:hover:from-white/10 dark:hover:to-gray-300/10 transition-all duration-200"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                   >
-                                    <span className="font-medium text-primary-red dark:text-primary-red-light mr-2">
+                                    <span className="font-medium text-red-500 dark:text-red-400 mr-2">
                                       View All Services
                                     </span>
-                                    <ArrowRight size={18} className="text-primary-red dark:text-primary-red-light" />
+                                    <ArrowRight size={18} className="text-red-500 dark:text-red-400" />
                                   </Link>
                                 </motion.div>
                               </motion.div>
@@ -625,7 +640,7 @@ const Navbar = () => {
                           className="flex items-center px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-200"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          <span className="mr-3 text-primary-red">{item.icon}</span>
+                          <span className="mr-3 text-red-500">{item.icon}</span>
                           <span className="font-medium text-gray-800 dark:text-white">{item.name}</span>
                         </Link>
                       )}
@@ -659,7 +674,7 @@ const Navbar = () => {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-primary-red/5 dark:bg-primary-red/10 blur-3xl"
+            className="absolute rounded-full bg-red-500/5 dark:bg-red-500/10 blur-3xl"
             initial={{
               x: Math.random() * 1000,
               y: Math.random() * 1000,
